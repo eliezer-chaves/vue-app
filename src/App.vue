@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h3>
+      Esse componente é do App: {{ local }}
+    </h3>   
+    <h3>
+      Esse componente é do Primeiro Componente: <PrimeiroComponente/>
+    </h3>     
+    <h3>
+      Essa tag é do: <life-cycle-hook/>
+    </h3>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//trazendo para o app o componente
+import PrimeiroComponente from "./components/PrimeiroComponente.vue";
+import LifeCycleHook from "./components/LifeCycleHook.vue";
 
+//Exportando o componente App e o PrimeiroComponente
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    PrimeiroComponente,
+    LifeCycleHook,
+  },
+  data() {
+    return {
+      local: "Componente App",
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
